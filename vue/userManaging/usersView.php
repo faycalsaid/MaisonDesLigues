@@ -1,24 +1,25 @@
 <table class="table">
-<thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
+
+  <thead>
+      <tr>
+        <th scope="col">Nom</th>
+        <th scope="col">Status</th>
+        <th scope="col">Email</th>
+      </tr>
   </thead>
-  <tbody>
-<?php 
-    foreach($users as $user):?>
     
-    <tr>
-      <th scope="row">1</th>
-      <td><?= $user['name'];?></td>
-      <td><?= $user['level'];?></td>
-      <td><?= $user['email'];?></td>
-    </tr>
-    <?endforeach ?>
+  <tbody>
+    <?php 
+      foreach($users as $user):?>
+      
+      <tr>
+        <td><?= $user['name'];?></td>
+        <td><?= $user['level'];?></td>
+        <td><?= $user['email'];?></td>
+      </tr>
+    <?php endforeach ?>
   </tbody>
+
 </table>
         
 
