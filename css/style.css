@@ -1,0 +1,13 @@
+.h-100vh{
+        height: 92vh;
+}
+.w-98{
+        width: 98%;
+}
+.ds-Center
+{
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
