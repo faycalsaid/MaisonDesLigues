@@ -1,33 +1,21 @@
 
+<!-- List Menu -->
+<?php require 'controller/menuController.php';
 
-<?php require 'vue/header.php'; ?>
+/*Login session*/
 
-<body>
+/* Add Header */
+require 'vue/header.php'; 
 
+require $affiche;
 
-<?php require "vue/Login/homeLogin.php" ; ?>
-
-<?php 
-
-//Chercher les salles de la db
-require "controller/userManaging/userController.php";
 ?>
 
 
+
+
+
   
-  <!-- SCRIPTS -->
-  <!-- JQuery -->
-  <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-  <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="js/popper.min.js"></script>
-  <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
-  <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="js/mdb.min.js"></script>
-</body>
-
-
-
-</html>
+<?php require 'vue/footer.php' ?>
 
 <!-- END ROUTEUR -->

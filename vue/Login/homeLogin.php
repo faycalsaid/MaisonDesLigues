@@ -1,7 +1,3 @@
-<nav class="navbar navbar-dark elegant-color-dark justify-content-between">
-  <a class="navbar-brand" href="#">Masion Des Ligues</a>
-</nav>
-
 
 <section class="form-elegant h-100vh w-98" >
 
