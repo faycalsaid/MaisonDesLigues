@@ -5,7 +5,6 @@
         <th scope="col">Nom</th>
         <th scope="col">Status</th>
         <th scope="col">Email</th>
-        <th scope="col"></th>
       </tr>
   </thead>
     
