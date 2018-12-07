@@ -14,16 +14,11 @@
   <link href="public/css/mdb.min.css" rel="stylesheet">
   <!-- Custom CSS -->
   <link href="public/css/style.css" rel="stylesheet">
-<<<<<<< HEAD
 
   <!-- Login js -->
   <script src="public/js/auth.js"></script>
   <!-- Jquery 3.3.1 -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-=======
-  <!-- Jquery for Ajax calls -->
-  <script type="text/javascript" src="public/js/jquery-3.3.1.min.js"></script>
->>>>>>> Faycal_Users
 </head>
 
 <body>
