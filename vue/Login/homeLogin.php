@@ -18,20 +18,22 @@
         </div>
 
         <!--Body-->
-        <div class="md-form">
-          <input type="text" id="Form-email1" class="form-control">
-          <label for="Form-email1">Votre Mail ou votre Login</label>
-        </div>
+        <form id="formConnect" method="post">
 
-        <div class="md-form">
-          <input type="password" id="Form-pass1" class="form-control">
-          <label for="Form-pass1">Votre Mot de passe</label>
-        </div>
+          <div class="md-form">
+            <input name="login" type="text" id="Form-email1" class="form-control">
+            <label for="Form-email1">Votre Mail ou votre Login</label>
+          </div>
 
+          <div class="md-form">
+            <input name="passwd" type="password" id="Form-pass1" class="form-control">
+            <label for="Form-pass1">Votre Mot de passe</label>
+          </div>
+        </form>
 
 
         <div class="text-center mb-3">
-          <button type="button" class="btn blue-gradient btn-block btn-rounded z-depth-1a">Sign up</button>
+          <button type="button" onclick="submitFormConnect()" class="btn blue-gradient btn-block btn-rounded z-depth-1a">Sign up</button>
         </div>
      
       </div>

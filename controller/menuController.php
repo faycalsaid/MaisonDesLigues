@@ -15,4 +15,6 @@ elseif ($_GET['menu'] == "SALLE") {
 elseif ($_GET['menu'] == "ASSOCIATION") {
     $affiche = "controller/associationManaging/assoController.php";
     $titre = "M2L - Association";
-} 
+}
+
+/*A enlever après*/

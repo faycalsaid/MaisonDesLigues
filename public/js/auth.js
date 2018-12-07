@@ -1,0 +1,3 @@
+function submitFormConnect(){
+    $("#formConnect").submit();
+}

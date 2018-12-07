@@ -14,6 +14,11 @@
   <link href="public/css/mdb.min.css" rel="stylesheet">
   <!-- Your custom styles (optional) -->
   <link href="public/css/style.css" rel="stylesheet">
+
+  <!-- Login js -->
+  <script src="public/js/auth.js"></script>
+  <!-- Jquery 3.3.1 -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -23,4 +28,5 @@
     <a href="?menu=USER">Utilisateur</a>
     <a href="?menu=SALLE">Salle</a>
     <a href="?menu=ASSOCIATION">Association</a>
+    <?php if (isset($_SESSION['login'])): ?> <a href="?menu=DISCONNECT">Déconnexion</a> <?php endif; ?>
   </nav>
