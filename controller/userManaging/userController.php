@@ -1,13 +1,9 @@
 <?php
 
         require "model/userManagingModel/usersModel.php" ;
+
+        $users = getAllUsers(); //Array with all users in DB
         
-        dbConnect();
-
-        $users = getAllUsers();
-
-        dbClose();
-
         require "vue/userManaging/usersView.php";
 
 

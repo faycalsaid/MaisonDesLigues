@@ -12,8 +12,10 @@
   <link href="public/css/bootstrap.min.css" rel="stylesheet">
   <!-- Material Design Bootstrap -->
   <link href="public/css/mdb.min.css" rel="stylesheet">
-  <!-- Your custom styles (optional) -->
+  <!-- Custom CSS -->
   <link href="public/css/style.css" rel="stylesheet">
+  <!-- Jquery for Ajax calls -->
+  <script type="text/javascript" src="public/js/jquery-3.3.1.min.js"></script>
 </head>
 
 <body>
