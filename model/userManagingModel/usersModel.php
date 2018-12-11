@@ -9,6 +9,21 @@
         return $res;
     }
 
+
+    if( isset($_POST['targFunc']))
+    {
+      
+        if( $_POST['targFunc'] == "mailExist" ) // If target function is mailExist
+        {
+            $email = htmlspecialchars($_POST['email']); 
+            mailExist($email);
+        }
+        else if( $_POST['targFunc'] == "insertUser" )
+        {
+            insertUser();
+        }
+    }   
+
     function mailExist($email)
     {
         $db = dbConnect();
@@ -19,5 +34,21 @@
         }
         else
         return false;
+    }
+
+    function insertUser()
+    {
+        $level = htmlspecialchars($_POST['level']);
+        $name = htmlspecialchars($_POST['name']);
+        $pwd = htmlspecialchars($_POST['pwd']);
+        $email = htmlspecialchars($_POST['email']);
+
+        $db = dbConnect();
+        try {
+                $db->query("INSERT INTO mrbs_users VALUES(NULL , '$level' , '$name' , '$pwd' , '$email' );");
+        } catch (\Throwable $th) {
+                return $th;
+        }    
+      
     }
     

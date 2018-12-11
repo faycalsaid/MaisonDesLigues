@@ -19,25 +19,32 @@
             </button>
           </div>
           <div class="modal-body mx-3">
+
+            <div class="md-form mb-5">
+            <select class="mdb-select md-form" id="formPositionNew">
+              <option value="" disabled selected>Choose your option</option>
+              <option value="2">Admin</option>
+              <option value="1">User</option>
+              <option value="0">Null</option>
+            </select>
+            </div>
+
             <div class="md-form mb-5">
               <input type="text" id="inputName" class="form-control validate">
-              <label data-error="wrong" data-success="right" for="inputName">Name</label>
+              <label data-error="wrong" data-success="right" for="inputName">Nom</label>
+            </div>
+
+            
+            <div class="md-form mb-5">
+              <input type="text" id="inputPwdNewUser" class="form-control validate">
+              <label data-error="wrong" data-success="right" for="inputPwdNewUser">Mot de Passe</label>
             </div>
 
             <div class="md-form mb-5">
-              <input type="text" id="inputPosition" class="form-control validate">
-              <label data-error="wrong" data-success="right" for="inputPosition">Position</label>
+              <input type="text" id="inputEmailNew" class="form-control validate" onkeyup="checkMail()">
+              <label data-error="wrong" data-success="right" for="inputEmailNew">Email</label>
             </div>
 
-            <div class="md-form mb-5">
-              <input type="text" id="inputOfficeInput" class="form-control validate">
-              <label data-error="wrong" data-success="right" for="inputOfficeInput">Office</label>
-            </div>
-
-            <div class="md-form mb-5">
-              <input type="text" id="inputAge" class="form-control validate">
-              <label data-error="wrong" data-success="right" for="inputAge">Age</label>
-            </div>
 
             <div class="md-form mb-5">
               <input type="date" id="inputDate" class="form-control" placeholder="Select Date">
@@ -51,7 +58,7 @@
 
           </div>
           <div class="modal-footer d-flex justify-content-center buttonAddFormWrapper">
-            <button class="btn btn-outline-primary btn-block buttonAdd" data-dismiss="modal">Add form
+            <button id="btnAdd" class="btn btn-outline-primary btn-block buttonAdd" data-dismiss="modal" onclick="createUser()">Add form
               <i class="fa fa-paper-plane-o ml-1"></i>
             </button>
           </div>
@@ -82,9 +89,9 @@
             <div class="md-form mb-5">
             <select class="mdb-select md-form" id="formPositionEdit">
               <option value="" disabled selected>Choose your option</option>
-              <option value="1">Admin</option>
-              <option value="2">User</option>
-              <option value="3">NULL</option>
+              <option value="2">Admin</option>
+              <option value="1">User</option>
+              <option value="0">NULL</option>
             </select>
               <label data-error="wrong" data-success="right" for="formPositionEdit">Position</label>
             </div>
@@ -197,12 +204,6 @@
         <th>Position
         </th>
         <th>Office
-        </th>
-        <th>Age
-        </th>
-        <th>Start date
-        </th>
-        <th>Salary
         </th>
       </tr>
     </tfoot>
