@@ -8,30 +8,33 @@ require 'model/loginManagingModel/loginModel.php';
  */
 $msg_error = "";
 
-if ($_GET['menu'] == "DISCONNECT") {
+if (isset($_GET['menu'])) {
+    if ($_GET['menu'] == "DISCONNECT") {
 
-    // Delete all session created
-    $_SESSION = array();
-    session_destroy();
-
-    header('Location: ?menu=LOGIN');
-
-}
-elseif($_SERVER['REQUEST_METHOD'] == 'POST'){
-
-    if (verifLogin(htmlspecialchars($_POST['login']), htmlspecialchars($_POST['passwd']))) {
-        header('Location: ?menu=USER');
+        // Delete all session created
+        $_SESSION = array();
+        session_destroy();
+    
+        header('Location: ?menu=LOGIN');
+    
+    }
+    elseif($_SERVER['REQUEST_METHOD'] == 'POST'){
+    
+        if (verifLogin(htmlspecialchars($_POST['login']), htmlspecialchars($_POST['passwd']))) {
+            header('Location: ?menu=USER');
+        }
+        else{
+            header('Location: ?menu=LOGIN');
+        }
+    }
+    elseif(isset($_SESSION['login']) && isset($_SESSION['password'])){
+        if (verifLogin(htmlspecialchars($_SESSION['login']), htmlspecialchars($_SESSION['password']))) {
+            header('Location: ');
+        }
     }
     else{
-        header('Location: ?menu=LOGIN');
+        require 'vue/Login/homeLogin.php';
     }
 }
-elseif(isset($_SESSION['login']) && isset($_SESSION['password'])){
-    if (verifLogin(htmlspecialchars($_SESSION['login']), htmlspecialchars($_SESSION['password']))) {
-        header('Location: ');
-    }
-}
-else{
-    require 'vue/Login/homeLogin.php';
-}
+
 

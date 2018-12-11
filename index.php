@@ -32,13 +32,10 @@ else{
   
 }
 
-
-  
 /* Add Header */
 require 'vue/header.php';
 
 require $affiche;
-
 ?>
 
 

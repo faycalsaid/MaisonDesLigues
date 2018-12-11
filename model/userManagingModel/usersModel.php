@@ -26,9 +26,12 @@
 
     function mailExist($email)
     {
+        require "../../model/bddModel.php";
         $db = dbConnect();
-        $res = $db->query("SELECT COUNT(*) FROM `mrbs_users` where email = '$email' ");
-        if($res >0)
+        $res = $db->query("SELECT COUNT(*) as nb FROM `mrbs_users` where email = '$email' ");
+        $res = $res->fetch();
+
+        if($res['nb'] > 0)
         {
             return true;
         }

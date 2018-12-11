@@ -176,7 +176,6 @@
     
     <?php 
       foreach($users as $user):
-        $id = $user['id'];
         if($user['level'] == 2)
         {
           $level = "Admin";
