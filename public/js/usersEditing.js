@@ -1,6 +1,5 @@
-
-var table = document.getElementById('my-table'), 
-    rIndex;   
+var table = document.getElementById('my-table'), //Global to use in all functions about the table
+    rIndex; 
 
 tableManaging();
     
@@ -57,28 +56,53 @@ function deleteRow() //delete selected user row from table
     $("tr").eq(rIndex).remove();
 }
 
-// function checkMail()
-// {
-//     var tryMail = $.('#')
+function createUser()
+{
+    var level, name, pwd, email;
     
-//     $.post("model/userManagingModel/mailExist.php", { email : tryMail
+    level = $('#formPositionNew').val();
+    name = $('#inputName').val();
+    pwd = $('#inputPwdNewUser').val();
+    email = $('#inputEmailNew').val();
+    var targetFunction = 'insertUser';
 
-//     });
-// }
 
-// $.post("verification-mail.php", {email : mail},
-// 	function(msg){
-// 		if(msg== 1){		// Si le login est dÃ©jÃ  dans la base
-// 			$('#msg_mail').html('Ce Mail est dÃ©jÃ  pris.');
-// 			$mail.css('border','1px solid red');
-// 			$mail.css('background','pink');
-// 		} else  if(msg== 2){	// Si le login n'est pas dans la base
-// 			$('#msg_mail').html(' âœ”ï¸');
-// 			$mail.css('border','1px solid green');
-// 			$mail.css('background','lightgreen');
-// 		}
+    $.ajax({
+        method: "POST",
+        context: document.body,
+        url: "model/userManagingModel/usersModel.php",
+        data: {targFunc: targetFunction , level: level, name: name, pwd : pwd, email : email }
+      })
+        .done(function( msg ) {
+          alert( "Data Saved: " + msg );
+        });
+}
 
-// 	}
+function checkMail()
+{
+    var mail = $('#inputEmailNew').val();
+    var targetFunction = 'mailExist';
+
+    $.ajax({
+        method: "POST",
+        context: document.body,
+        url: "model/userManagingModel/usersModel.php",
+        data: {targFunc: targetFunction , email: mail}
+      })
+        .done(function( msg ) {
+          if(msg)
+          {
+            alert("normalement boolean" + msg);
+          }
+          else
+          {
+
+          }
+    });
+
+    
+}
+
 
 
 
