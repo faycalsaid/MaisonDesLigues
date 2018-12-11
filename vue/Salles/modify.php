@@ -1,1 +1,2 @@
-PDO $bdd
+
+    <div id="calendar"></div>

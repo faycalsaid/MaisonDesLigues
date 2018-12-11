@@ -96,7 +96,7 @@ function checkMail()
           }
           else
           {
-
+            alert("msg" + msg);
           }
     });
 
