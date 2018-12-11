@@ -38,6 +38,7 @@
 
     function insertUser()
     {
+        require "../../model/bddModel.php";
         $level = htmlspecialchars($_POST['level']);
         $name = htmlspecialchars($_POST['name']);
         $pwd = htmlspecialchars($_POST['pwd']);
@@ -45,7 +46,7 @@
 
         $db = dbConnect();
         try {
-                $db->query("INSERT INTO mrbs_users VALUES(NULL , '$level' , '$name' , '$pwd' , '$email' );");
+                $db->query("INSERT INTO mrbs_users VALUES(NULL , '$level' , '$name' , md5('$pwd') , '$email' );");
         } catch (\Throwable $th) {
                 return $th;
         }    
