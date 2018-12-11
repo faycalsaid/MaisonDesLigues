@@ -1,6 +1,14 @@
 <?php
+require "model/salleManagingModel/salleModel.php";
+
+dbConnect();
+
+$Salles = getSalle();
 
 
 
-require "vue/Salles/modify.php";
+dbClose();
+
+require "vue/Salles/sallesView.php";
+
 ?>
