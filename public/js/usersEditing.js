@@ -36,7 +36,7 @@ function tableManaging()
 function fillEditForm() //fill the editing form with selected user data
 {
     $('#formNameEdit').val(table.rows[rIndex].cells[0].innerText).trigger("change"); 
-    $('#formPositionEdit').val(table.rows[rIndex].cells[1].innerText).trigger("change"); 
+    $('#formPosEditDef').text(table.rows[rIndex].cells[1].innerText).trigger("change"); 
     $('#formEmailEdit').val(table.rows[rIndex].cells[2].innerText).trigger("change"); 
 
     $("#btnValidEdit").click(function() {
@@ -92,11 +92,11 @@ function checkMail()
         .done(function( msg ) {
           if(msg)
           {
-            alert("normalement boolean" + msg);
+            console.log("Message php " +  $.parseJSON(msg));
           }
           else
           {
-            alert("msg" + msg);
+            console.log("Message php " +  $.parseJSON(msg));
           }
     });
 

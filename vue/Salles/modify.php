@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-    <div id="calendar"></div>
-=======
 <!-- Default form contact -->
 <form class="text-center border border-light p-5">
 
@@ -29,4 +25,3 @@
     <button class="btn btn-info btn-block" type="submit">Send</button>
 
 </form>
->>>>>>> 6c2ebab747e2bdf51a8dbdc7526dc3857d4a469c

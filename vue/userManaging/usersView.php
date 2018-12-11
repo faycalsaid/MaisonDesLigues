@@ -88,7 +88,7 @@
 
             <div class="md-form mb-5">
             <select class="mdb-select md-form" id="formPositionEdit">
-              <option value="" disabled selected>Choose your option</option>
+              <option id="formPosEditDef" disabled selected></option>
               <option value="2">Admin</option>
               <option value="1">User</option>
               <option value="0">NULL</option>
