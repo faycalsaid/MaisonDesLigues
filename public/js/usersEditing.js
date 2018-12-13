@@ -5,7 +5,7 @@ tableManaging();
     
 function tableManaging()
 {
-    for(var i = 1; i < table.rows.length; i++)
+    for(var i = 1; i < table.rows.length - 1 ; i++)
     {
         table.rows[i].addEventListener('click', function() 
         {
@@ -29,9 +29,7 @@ function tableManaging()
             console.log(rIndex);
         });
     }
-
 }
-
 
 function fillEditForm() //fill the editing form with selected user data
 {
@@ -66,20 +64,42 @@ function createUser()
     email = $('#inputEmailNew').val();
     var targetFunction = 'insertUser';
 
+    $.ajax({
+        method: "POST",
+        context: document.body,
+        url: "model/userManagingModel/usersModel.php",
+        data: {targFunc: targetFunction , level: level, name: name, pwd : pwd, email : email },
+        dataType : "json"
+      })
+        .done(function( msg ) {
+            var obj = $.parseJSON(msg);
+            alert( "Data Saved: " + obj );
+        });
+}
+
+function deleteUser()
+{
+    var emailToDelete = table.rows[rIndex].cells[2].innerText;
+    var targetFunction = 'deleteUser';
 
     $.ajax({
         method: "POST",
         context: document.body,
         url: "model/userManagingModel/usersModel.php",
-        data: {targFunc: targetFunction , level: level, name: name, pwd : pwd, email : email }
+        data: {targFunc: targetFunction , email: emailToDelete },
+        dataType: "json"
       })
-        .done(function( msg ) {
-          alert( "Data Saved: " + msg );
+        .done(function( s ) {
+            var o = $.parseJSON(s);
+            console.log(o);
         });
+
+    deleteRow();
 }
 
 function checkMail()
 {
+    console.log("here");
     var mail = $('#inputEmailNew').val();
     var targetFunction = 'mailExist';
 
@@ -87,16 +107,20 @@ function checkMail()
         method: "POST",
         context: document.body,
         url: "model/userManagingModel/usersModel.php",
-        data: {targFunc: targetFunction , email: mail}
+        data: {targFunc: targetFunction , email: mail},
+        dataType: "json"
       })
         .done(function( msg ) {
-          if(msg)
+            var obj = $.parseJSON(msg) // True if email already taken else False
+          if(obj)
           {
-            console.log("Message php " +  $.parseJSON(msg));
+              console.log(obj);
+            $('#inputEmailNew').addClass("invalid"); 
           }
           else
           {
-            console.log("Message php " +  $.parseJSON(msg));
+            $('#inputEmailNew').removeClass("invalid");
+            $('#inputEmailNew').addClass("valid"); 
           }
     });
 

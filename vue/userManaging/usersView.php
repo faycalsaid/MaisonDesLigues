@@ -21,7 +21,7 @@
           <div class="modal-body mx-3">
 
             <div class="md-form mb-5">
-            <select class="mdb-select md-form" id="formPositionNew">
+            <select class="browser-default custom-select" id="formPositionNew">
               <option value="" disabled selected>Choose your option</option>
               <option value="2">Admin</option>
               <option value="1">User</option>
@@ -87,13 +87,13 @@
             </div>
 
             <div class="md-form mb-5">
-            <select class="mdb-select md-form" id="formPositionEdit">
+            <select class="browser-default custom-select" id="formPositionEdit">
               <option id="formPosEditDef" disabled selected></option>
               <option value="2">Admin</option>
               <option value="1">User</option>
               <option value="0">NULL</option>
             </select>
-              <label data-error="wrong" data-success="right" for="formPositionEdit">Position</label>
+              <label data-error="wrong" data-success="right" for="formPositionEdit" style="position:absolute;margin-left:-5000px;">Position</label>
             </div>
 
             <div class="md-form mb-5">
@@ -148,7 +148,7 @@
 
           </div>
           <div class="modal-footer d-flex justify-content-center deleteButtonsWrapper">
-            <button type="button" class="btn btn-danger btnYesClass" id="btnYes" data-dismiss="modal" onclick="deleteRow()">Yes</button>
+            <button type="button" class="btn btn-danger btnYesClass" id="btnYes" data-dismiss="modal" onclick="deleteUser()">Yes</button>
             <button type="button" class="btn btn-primary btnNoClass" id="btnNo" data-dismiss="modal">No</button>
           </div>
         </div>
@@ -184,10 +184,7 @@
         {
           $level = "User";
         }
-        else if($user['level'] == 0)
-        {
-          $level = "Null";
-        }?>    
+    ?>    
       <tr>
         <td id="name"> <?= $user['name'];?></td>
         <td id="level" > <?= $level?></td>
