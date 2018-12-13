@@ -87,11 +87,11 @@ function deleteUser()
         context: document.body,
         url: "model/userManagingModel/usersModel.php",
         data: {targFunc: targetFunction , email: emailToDelete },
-        dataType: "json"
+        dataType: "json",
+        async : "false"
       })
-        .done(function( s ) {
-            var o = $.parseJSON(s);
-            console.log(o);
+        .done(function(s) {
+            console.log(s);
         });
 
     deleteRow();
@@ -101,7 +101,7 @@ function checkMail()
 {
     console.log("here");
     var mail = $('#inputEmailNew').val();
-    var targetFunction = 'mailExist';
+    var targetFunction = "mailExist";
 
     $.ajax({
         method: "POST",

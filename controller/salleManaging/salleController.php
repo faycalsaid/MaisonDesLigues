@@ -1,14 +1,13 @@
 <?php
-require "model/salleManagingModel/salleModel.php";
+require_once "config.php";
 
-dbConnect();
-
-$Salles = getSalle();
+require_once "model/salleManagingModel/salleModel.php" ;
 
 
+$sallesInfo = getSalleInfo();
+$sallesReunion = getSalleReunion();
+$sallesReception = getSalleReception();
 
-dbClose();
-
-require "vue/Salles/sallesView.php";
+require "vue/Salles/test.php";
 
 ?>

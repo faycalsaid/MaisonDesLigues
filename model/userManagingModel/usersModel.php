@@ -15,9 +15,9 @@
             $targetFunction = htmlspecialchars($_POST['targFunc']);
             
             switch ($targetFunction) {
-                case 'insertUser': insertUser(); break;
-                case 'mailExist': mailExist(); break;
-                case 'deleteUser': deleteUser(); break;
+                case "insertUser": insertUser(); break;
+                case "mailExist": mailExist(); break;
+                case "deleteUser": deleteUser(); break;
 
             }
         }
@@ -30,7 +30,7 @@
         
         require "../../model/bddModel.php";
         $db = dbConnect();
-        $res = $db->query("SELECT COUNT(*) as nb FROM `mrbs_users` where email = '$email' WHERE level <> 0 ");
+        $res = $db->query("SELECT COUNT(*) as nb FROM `mrbs_users` WHERE email = '$email' && level <> 0 ");
         $res = $res->fetch();
         $bool;
 
@@ -71,7 +71,7 @@
         $db = dbConnect();
         try
         {
-                $db->query("INSERT INTO mrbs_deleted_users SELECT * FROM mrbs_users WHERE email = '$email' ");
+                $db->query(" INSERT INTO mrbs_deleted_users (id,level, name, password, email) SELECT id,level, name, password, email FROM mrbs_users WHERE email = '$email'  ");
                 $db->query("DELETE FROM  mrbs_users WHERE email = '$email' ");
         } 
         catch (\Throwable $th)
