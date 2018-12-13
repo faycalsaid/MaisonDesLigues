@@ -33,7 +33,7 @@ if (isset($_GET['menu'])) {
         }
     }
     else{
-        require 'vue/Login/homeLogin.php';
+        require 'vue/loginManaging/loginView.php';
     }
 }
 

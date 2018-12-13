@@ -13,7 +13,7 @@ elseif ($_GET['menu'] == "SALLE") {
     $titre = "M2L - Salle";
 }
 elseif ($_GET['menu'] == "ASSOCIATION") {
-    $affiche = "controller/associationManaging/assoController.php";
+    $affiche = "controller/associationManaging/associationController.php";
     $titre = "M2L - Association";
 }
 

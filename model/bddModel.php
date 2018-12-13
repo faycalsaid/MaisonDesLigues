@@ -4,7 +4,7 @@ function dbConnect()
 {
         try
         {
-                $db = new PDO('mysql:host=localhost; dbname=mrbs; charset=utf8' , 'root', 'root' );
+                $db = new PDO('mysql:host=localhost; dbname=mrbs; charset=utf8' , 'root', '' );
                 return $db;  
         }
         catch(Exception $e)
