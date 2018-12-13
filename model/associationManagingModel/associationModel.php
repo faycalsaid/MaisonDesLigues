@@ -3,11 +3,15 @@
     function getAllAsso()
     {
         $db = dbConnect();
-        $res = $db->query("SELECT mrbs_association.name, mrbs_association.mail, mrbs_users.email, 
-            mrbs_sector.libelle as sector, id_sector, urlImage FROM mrbs_association 
+        try {
+            $res = $db->query("SELECT mrbs_association.id, mrbs_association.name, mrbs_association.mail, 
+            mrbs_users.email, id_responsible, mrbs_sector.libelle as sector, id_sector, urlImage FROM mrbs_association 
             INNER JOIN mrbs_users on id_responsible = mrbs_users.id 
             INNER JOIN mrbs_sector on id_sector = mrbs_sector.id");
         $res = $res->fetchAll();
+        } catch (\Throwable $th) {
+            return $th;­
+        }
         dbClose();
         return $res;
     }
@@ -56,5 +60,32 @@
         } catch (\Throwable $th) {
                 return $th;
         }    
+        dbClose();
       
+    }
+
+    function getAllResponcable(){
+        $db = dbConnect();
+        try {
+            $res = $db->query("SELECT * FROM `mrbs_users`");
+        $res = $res->fetchAll();
+        } catch (\Throwable $th) {
+            return $th;­
+        }
+        dbClose();
+        return $res;
+    }
+
+    function updateInfoAsso($id, $nom, $assoMail, $idRes, $sector, $img){
+        // Update assocation in database by procedure
+
+        require "../../model/bddModel.php";
+        $db = dbConnect();
+        try {
+            $db->query('')
+        } catch (\Throwable $th) {
+            return $th;
+        }
+        dbClose();
+
     }

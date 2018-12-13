@@ -38,25 +38,32 @@
                     <div class="card-block pt-3">
                     <h4 class="card-title text-center"><?= $asso['name'] ?></h4>
                     </div>
-                    <form action="menu=USER" class="ml-3 mr-3" method="post">
+                    <form action="?menu=ASSOCIATION" class="ml-3 mr-3" method="post">
                         <div class="md-form">
-                            <input id="input_nom" class="form-control" type="text" length="10" value="<?= $asso['name'] ?>" mdbCharCounter mdbInputDirective>
+                            <input type="hidden" name="id" value="<?= $asso['id'] ?>" />
+                        </div>
+                        <div class="md-form">
+                            <input id="input_nom" name="input_nom" class="form-control" type="text" length="10" value="<?= $asso['name'] ?>" mdbCharCounter mdbInputDirective>
                             <label for="input_nom">Nom</label>
                         </div>
                         <div class="md-form">
-                            <input id="input_asso_mail" class="form-control" type="text" length="10" value="<?= $asso['mail'] ?>" mdbCharCounter mdbInputDirective>
+                            <input id="input_asso_mail" name="input_asso_mail" class="form-control" type="text" length="10" value="<?= $asso['mail'] ?>" mdbCharCounter mdbInputDirective>
                             <label for="input_asso_mail">Mail association</label>
                         </div>
                         <div class="md-form">
-                            <input id="input_res_mail" class="form-control" type="text" length="10" value="<?= $asso['email'] ?>" mdbCharCounter mdbInputDirective>
-                            <label for="input_res_mail">Responcable mail</label>
+
+                        <SELECT name="select_res_mail">
+                        <?php foreach ($responcables as $responcable): ?>
+                            <option value="<?= $responcable['id']?>"><?= $responcable['email']?></option>
+                        <?php endforeach ?>
+                        </SELECT>
                         </div>
                         <div class="md-form">
-                            <input id="input_sector" class="form-control" type="text" length="10" value="<?= $asso['sector'] ?>" mdbCharCounter mdbInputDirective>
+                            <input id="input_sector" name="input_sector" class="form-control" type="text" length="10" value="<?= $asso['sector'] ?>" mdbCharCounter mdbInputDirective>
                             <label for="input_sector">Secteur</label>
                         </div>
                         <div class="md-form">
-                            <input id="input_img" class="form-control" type="text" length="10" value="<?= $asso['urlImage'] ?>" mdbCharCounter mdbInputDirective>
+                            <input id="input_img" name="input_img" class="form-control" type="text" length="10" value="<?= $asso['urlImage'] ?>" mdbCharCounter mdbInputDirective>
                             <label for="input_img">Lien image</label>
                         </div>
 

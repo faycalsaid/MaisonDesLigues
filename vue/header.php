@@ -27,7 +27,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark special-color-dark">
 
 <!-- Navbar brand -->
-<a class="navbar-brand text-uppercase" href="#">Masion Des Ligues</a>
+<a class="navbar-brand text-uppercase" href="#">Maison Des Ligues</a>
 
 <!-- Collapse button -->
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2"

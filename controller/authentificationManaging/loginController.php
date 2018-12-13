@@ -19,15 +19,17 @@ if (isset($_GET['menu'])) {
     
     }
     elseif($_SERVER['REQUEST_METHOD'] == 'POST'){
+        if (isset($_POST['login']) && isset($_POST['passwd'])) {
+            if (verifLogin(htmlspecialchars($_POST['login']), htmlspecialchars($_POST['passwd']))) {
+                header('Location: ?menu=USER');
+            }
+            else{
+                // Delete all session created
+                $_SESSION = array();
+                session_destroy();
     
-        if (verifLogin(htmlspecialchars($_POST['login']), htmlspecialchars($_POST['passwd']))) {
-            header('Location: ?menu=USER');
-        }
-        else{
-            // Delete all session created
-            $_SESSION = array();
-            session_destroy();
-            header('Location: ?menu=LOGIN');
+                header('Location: ?menu=LOGIN');
+            }
         }
     }
     elseif(isset($_SESSION['login']) && isset($_SESSION['password'])){
