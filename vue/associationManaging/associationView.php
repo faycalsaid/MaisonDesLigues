@@ -38,7 +38,7 @@
                     <div class="card-block pt-3">
                     <h4 class="card-title text-center"><?= $asso['name'] ?></h4>
                     </div>
-                    <form action="?menu=ASSOCIATION" class="ml-3 mr-3" method="post">
+                    <form action="menu=USER" class="ml-3 mr-3" method="post">
                         <div class="md-form">
                             <input id="input_nom" class="form-control" type="text" length="10" value="<?= $asso['name'] ?>" mdbCharCounter mdbInputDirective>
                             <label for="input_nom">Nom</label>
@@ -60,11 +60,10 @@
                             <label for="input_img">Lien image</label>
                         </div>
 
-                        <div class="d-flex  justify-content-center">
+                        <div class="d-flex justify-content-center">
                             <input type="submit" value="Valider" class="btn p-btn btn-outline-success waves-effect">
                         </div>
                     </form>
-
                 <div>            
             </div>
         </div>

@@ -1,4 +1,5 @@
 
+<!-- INDEX -->
 <!-- List Menu -->
 <?php require 'controller/menuController.php';
 
@@ -14,7 +15,6 @@ session_start();
 
 if(isset($_SESSION['login']) && isset($_SESSION['password'])){
   require 'controller/authentificationManaging/loginController.php';
-
 }
 else{
   if(isset($_GET['menu'])){

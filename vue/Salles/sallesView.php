@@ -30,8 +30,6 @@
     
         ?>
    
-		
-        
 		<tr>
 			<td>
             <?php echo $type ; ?>

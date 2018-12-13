@@ -24,6 +24,9 @@ if (isset($_GET['menu'])) {
             header('Location: ?menu=USER');
         }
         else{
+            // Delete all session created
+            $_SESSION = array();
+            session_destroy();
             header('Location: ?menu=LOGIN');
         }
     }
