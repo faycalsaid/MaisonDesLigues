@@ -1,14 +1,32 @@
 <?php 
 
-    require "model/bddModel.php";
 
-    Function getSalle()
+
+    Function getSalleInfo()
     {
         $db = dbConnect();
-        $req = $db->query("SELECT area_id,room_name,description,capacity,room_admin_email FROM mrbs_room ORDER BY area_id DESC ");
+        $req = $db->query("SELECT room_name from mrbs_room where area_id = 1");
         $req = $req->fetchAll();
         return $req;
     }
+
+    Function getSalleReunion()
+    {
+        $db = dbConnect();
+        $req = $db->query("SELECT room_name from mrbs_room where area_id = 2");
+        $req = $req->fetchAll();
+        return $req;
+    }
+
+    Function getSalleReception()
+    {
+        $db = dbConnect();
+        $req = $db->query("SELECT room_name from mrbs_room where area_id = 3");
+        $req = $req->fetchAll();
+        return $req;
+    }
+
+    
 
 
 
