@@ -56,13 +56,6 @@
       <a class="nav-link text-uppercase" id="navbarDropdownMenuLink4"
         aria-haspopup="true" aria-expanded="false" href="?menu=ASSOCIATION">Association</a>
     </li>
-    <!-- Logout -->
-  <?php if (isset($_SESSION['login'])): ?>
-      <li class="nav-item dropdown mega-dropdown">
-        <a class="nav-link text-uppercase" id="navbarDropdownMenuLink4"
-          aria-haspopup="true" aria-expanded="false" href="?menu=DISCONNECT">Déconnexion</a>
-      </li>
-  <?php endif; ?>
   </ul>
   <!-- Links -->
 
@@ -72,7 +65,11 @@
       <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
     </div>
   </form>
-
+  <!-- Logout -->
+<?php if (isset($_SESSION['login'])): ?>
+  <a class="btn btn-outline-danger btn-rounded waves-effect" id="navbarDropdownMenuLink4"
+          aria-haspopup="true" aria-expanded="false" href="?menu=DISCONNECT">Déconnexion<i class="fa fa-sign-in ml-1"></i></a>
+<?php endif; ?>
 </div>
 <!-- Collapsible content -->
 

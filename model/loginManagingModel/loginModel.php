@@ -7,7 +7,7 @@ function verifLogin($login, $password){
     }
     else{
         $db = dbConnect();
-        $res = $db->query("SELECT name, password FROM `mrbs_users` WHERE name='". $login ."' OR email='". $login ."' AND password = 'md5(".$password.")'");
+        $res = $db->query("SELECT name, password FROM `mrbs_users` WHERE name='". $login ."' OR email='". $login ."' AND password = md5('".$password."')");
         $res = $res->fetchAll();
 
         if (count($res) == 1) {

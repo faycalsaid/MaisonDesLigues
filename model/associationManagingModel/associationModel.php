@@ -5,12 +5,13 @@
         $db = dbConnect();
         try {
             $res = $db->query("SELECT mrbs_association.id, mrbs_association.name, mrbs_association.mail, 
-            mrbs_users.email, id_responsible, mrbs_sector.libelle as sector, id_sector, urlImage FROM mrbs_association 
+            mrbs_users.email, id_responsible, mrbs_sector.libelle as sector, id_sector, urlImage 
+            FROM mrbs_association 
             INNER JOIN mrbs_users on id_responsible = mrbs_users.id 
             INNER JOIN mrbs_sector on id_sector = mrbs_sector.id");
         $res = $res->fetchAll();
         } catch (\Throwable $th) {
-            return $th;­
+
         }
         dbClose();
         return $res;
@@ -70,7 +71,7 @@
             $res = $db->query("SELECT * FROM `mrbs_users`");
         $res = $res->fetchAll();
         } catch (\Throwable $th) {
-            return $th;­
+
         }
         dbClose();
         return $res;
@@ -82,7 +83,7 @@
         require "../../model/bddModel.php";
         $db = dbConnect();
         try {
-            $db->query('')
+            $db->query("UPDATE `mrbs_association` SET name ='".$nom."' ,mail= '".$assoMail."',id_responsible='".$idRes."',id_sector='".$sector."',urlImage= '".$img."' WHERE id='".$id."' ");
         } catch (\Throwable $th) {
             return $th;
         }

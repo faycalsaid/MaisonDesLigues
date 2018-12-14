@@ -51,12 +51,14 @@
                             <label for="input_asso_mail">Mail association</label>
                         </div>
                         <div class="md-form">
-
-                        <SELECT name="select_res_mail">
+                        <SELECT id='<?= $asso['id'] ?>' name="select_res_mail" class="form-control" >
                         <?php foreach ($responcables as $responcable): ?>
                             <option value="<?= $responcable['id']?>"><?= $responcable['email']?></option>
                         <?php endforeach ?>
                         </SELECT>
+                        <script>
+                            document.getElementById("<?= $asso['id'] ?>").selectedIndex = <?= $asso['id_responsible'] ?>;
+                        </script>
                         </div>
                         <div class="md-form">
                             <input id="input_sector" name="input_sector" class="form-control" type="text" length="10" value="<?= $asso['sector'] ?>" mdbCharCounter mdbInputDirective>
