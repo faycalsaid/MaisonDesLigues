@@ -45,17 +45,6 @@
               <label data-error="wrong" data-success="right" for="inputEmailNew">Email</label>
             </div>
 
-
-            <div class="md-form mb-5">
-              <input type="date" id="inputDate" class="form-control" placeholder="Select Date">
-              <label data-error="wrong" data-success="right" for="inputDate"></label>
-            </div>
-
-            <div class="md-form mb-5">
-              <input type="text" id="inputSalary" class="form-control validate">
-              <label data-error="wrong" data-success="right" for="inputSalary">Salary</label>
-            </div>
-
           </div>
           <div class="modal-footer d-flex justify-content-center buttonAddFormWrapper">
             <button id="btnAdd" class="btn btn-outline-primary btn-block buttonAdd" data-dismiss="modal" onclick="createUser()">Add form
@@ -67,7 +56,7 @@
     </div>
 
     <div class="text-center">
-      <a href="" class="btn btn-info btn-rounded btn-sm" data-toggle="modal" data-target="#modalAdd">Add<i
+      <a href="" class="btn btn-info btn-rounded btn-sm" data-toggle="modal" data-target="#modalAdd">Ajouter un utilisateur<i
           class="fa fa-plus-square ml-1"></i></a>
     </div>
 
@@ -98,28 +87,12 @@
 
             <div class="md-form mb-5">
               <input type="text" id="formEmailEdit" class="form-control validate" onkeyup="checkMail()">
-              <label data-error="wrong" data-success="right" for="formOfficeEdit">Email</label>
+              <label data-error="wrong" data-success="right" for="formEmailEdit">Email</label>
             </div>
-
-            <div class="md-form mb-5">
-              <input type="text" id="formAgeEdit" class="form-control validate">
-              <label data-error="wrong" data-success="right" for="formAgeEdit">Age</label>
-            </div>
-
-            <div class="md-form mb-5">
-              <input type="text" id="formDateEdit" class="form-control datepicker">
-              <label data-error="wrong" data-success="right" for="formDateEdit">Date</label>
-            </div>
-
-            <div class="md-form mb-5">
-              <input type="text" id="formSalaryEdit" class="form-control validate">
-              <label data-error="wrong" data-success="right" for="formSalaryEdit">Salary</label>
-            </div>
-
 
           </div>
           <div class="modal-footer d-flex justify-content-center editInsideWrapper">
-            <button id="btnValidEdit" class="btn btn-outline-secondary btn-block editInside" data-dismiss="modal">Edit
+            <button id="btnValidEdit" class="btn btn-outline-secondary btn-block editInside" data-dismiss="modal" onclick="updateUser()">Edit
               form
               <i class="fa fa-paper-plane-o ml-1"></i>
             </button>
@@ -130,7 +103,7 @@
 
     <div class="text-center buttonEditWrapper">
       <button id="btnEdit" class="btn btn-info btn-rounded btn-sm buttonEdit" data-toggle="modal" onclick="fillEditForm()" data-target="#modalEdit"
-        disabled>Edit<i class="fa fa-pencil-square-o ml-1"></i></a>
+        disabled>Modifier<i class="fa fa-pencil-square-o ml-1"></i></a>
     </div>
 
     <div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="modalDelete"
@@ -138,7 +111,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header text-center">
-            <h4 class="modal-title w-100 font-weight-bold ml-5 text-danger">Delete</h4>
+            <h4 class="modal-title w-100 font-weight-bold ml-5 text-danger">Supprimer</h4>
             <button type="button" class="close text-danger" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -158,7 +131,7 @@
     <div class="text-center">
       <button id="btnDelete" class="btn btn-danger btn-sm btn-rounded buttonDelete" data-toggle="modal"
        disabled data-target="#modalDelete" onclick="fillDeleteForm()"
-      >Delete<i class="fa fa-times ml-1"></i></a>
+      >Supprimer<i class="fa fa-times ml-1"></i></a>
     </div>
   </div>
 

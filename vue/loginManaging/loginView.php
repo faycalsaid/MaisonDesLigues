@@ -33,7 +33,7 @@
 
 
         <div class="text-center mb-3">
-          <button type="button" onclick="submitFormConnect()" class="btn blue-gradient btn-block btn-rounded z-depth-1a">Sign up</button>
+          <button type="button" onclick="submitFormConnect()" class="btn blue-gradient btn-block btn-rounded z-depth-1a">Connexion</button>
         </div>
      
       </div>

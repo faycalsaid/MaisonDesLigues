@@ -1,4 +1,5 @@
 <?php
+    
     function getAllUsers()
     {
         $db = dbConnect();
@@ -18,6 +19,7 @@
                 case "insertUser": insertUser(); break;
                 case "mailExist": mailExist(); break;
                 case "deleteUser": deleteUser(); break;
+                case "updateUser": updateUser(); break;
 
             }
         }
@@ -82,6 +84,30 @@
         echo json_encode($email);
     }
 
-    function is_ajax() {
+    function updateUser()
+    {
+        require "../../model/bddModel.php";
+        
+        $level = htmlspecialchars($_POST['level']);
+        $name = htmlspecialchars($_POST['name']);
+        $email = htmlspecialchars($_POST['email']);
+        $oldEmail = htmlspecialchars($_POST['oldEmail']);
+
+        $db = dbConnect();
+        try
+        {
+                $db->query("UPDATE mrbs_users SET level = '$level', name = '$name', email ='$email' WHERE email='$oldEmail' ");
+        } 
+        catch (\Throwable $th)
+        {
+                echo json_encode($th) ;
+        }   
+
+        echo json_encode($email);
+
+    }
+
+    function is_ajax()
+    {
         return isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest';
-      }
+    }
