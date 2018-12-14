@@ -7,28 +7,43 @@ function tableManaging()
 {
     for(var i = 1; i < table.rows.length - 1 ; i++)
     {
-        table.rows[i].addEventListener('click', function() 
+        table.rows[i].addEventListener('click', function(e) 
         {
             rIndex = this.rowIndex; //Get the index of the current double clicked row
 
-            selectedRow = table.rows[rIndex].classList; //Get the element of the selected row
+            selectedRow = table.rows[rIndex].classList; //Get the class of the selected row
             
             if(!selectedRow.contains("tr-color-selected"))
             {
                 selectedRow.add("tr-color-selected"); //Change color of selected row
                 $("#btnEdit").attr("disabled", false);
                 $("#btnDelete").attr("disabled", false);
+                removeTableClickListener();
             }
             else
             {
                 selectedRow.remove("tr-color-selected"); //Remove color of selected row
                 $("#btnEdit").attr("disabled", true);
-                $("#btnDelete").attr("disabled", true);
+                $("#btnDelete").attr("disabled", true); 
             }
 
             console.log(rIndex);
         });
     }
+}
+
+function removeTableClickListener()
+{
+    for(var i = 1; i < table.rows.length - 1 ; i++)
+    {
+        table.rows[i].removeEventListener('click', testLog() , true );
+    }
+
+}
+
+function testLog()
+{
+    console.log(rIndex);
 }
 
 function fillEditForm() //fill the editing form with selected user data
@@ -92,6 +107,29 @@ function deleteUser()
       })
         .done(function(s) {
             console.log(s);
+        });
+
+    deleteRow();
+}
+function updateUser()
+{
+    var level, name, email;
+    
+    level = $('#formPositionEdit').val();
+    name = $('#formNameEdit').val();
+    newEmail = $('#formEmailEdit').val();
+    var oldEmail = table.rows[rIndex].cells[2].innerText;
+    var targetFunction = 'updateUser';
+    console.log(oldEmail + " " + level);
+    $.ajax({
+        method: "POST",
+        context: document.body,
+        url: "model/userManagingModel/usersModel.php",
+        data: {targFunc: targetFunction , level: level, name: name, email : newEmail, oldEmail: oldEmail },
+        dataType: "json"
+      })
+        .done(function(s) {
+            console.log("JS AJAX RESP UPDATE USER : "+ s);
         });
 
     deleteRow();
