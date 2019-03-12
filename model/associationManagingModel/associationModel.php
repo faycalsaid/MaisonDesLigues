@@ -79,11 +79,10 @@
 
     function updateInfoAsso($id, $nom, $assoMail, $idRes, $sector, $img){
         // Update assocation in database by procedure
-
-        require "../../model/bddModel.php";
         $db = dbConnect();
         try {
             $db->query("UPDATE `mrbs_association` SET name ='".$nom."' ,mail= '".$assoMail."',id_responsible='".$idRes."',id_sector='".$sector."',urlImage= '".$img."' WHERE id='".$id."' ");
+            echo "UPDATE `mrbs_association` SET name ='".$nom."' ,mail= '".$assoMail."',id_responsible='".$idRes."',id_sector='".$sector."',urlImage= '".$img."' WHERE id='".$id."' ";
         } catch (\Throwable $th) {
             return $th;
         }

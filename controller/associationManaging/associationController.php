@@ -6,7 +6,7 @@
                 $id = htmlspecialchars($_POST['id']);
                 $nom = htmlspecialchars($_POST['input_nom']);
                 $assoMail = htmlspecialchars($_POST['input_asso_mail']);
-                $resMail = htmlspecialchars($_POST['input_res_mail']);
+                $resMail = htmlspecialchars($_POST['select_res_mail']);
                 $sector = htmlspecialchars($_POST['input_sector']); 
                 $img = htmlspecialchars($_POST['input_img']);
 
