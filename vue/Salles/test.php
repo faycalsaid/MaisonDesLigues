@@ -42,19 +42,10 @@
                   <div class="card-footer px-1">
                   <div id="info">Observe the platform icon's motion direction when there is up and down hover on options.</div>
 
-             <select name="per1" id="select_info" onclick="editInfo()">
-  <option selected="selected">Choose one</option>
-                  <?php
-                  
-    foreach($sallesInfo as $salle)
-     { ?>
-      <option value="<?= $salle['room_name'] ?>"><?= $salle['room_name'] ?></option>
-  <?php
-    } ?>
-</select> 
+             
 <div class="text-center buttonEditWrapper">
-    <button id="btnEditInfo" class="btn btn-info btn-rounded btn-sm buttonEdit" data-toggle="modal" data-target="#modalEdit"
-      disabled>Edit<i class="fa fa-pencil-square-o ml-1"></i></a>
+    <button id="btnEditInfo" class="btn btn-info btn-rounded btn-sm buttonEdit" data-toggle="modal" data-target="#modalEdit1"
+      >Edit<i class="fa fa-pencil-square-o ml-1"></i></a>
   </div>
               
 
@@ -90,19 +81,10 @@
                   <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing minima veniam elit.</p>
                   <!-- Card footer -->
                   <div class="card-footer px-1">
-                  <select name="per1" id="select_reunion" onclick="editReunion()">
-  <option selected="selected">Choose one</option>
-                  <?php
                   
-    foreach($sallesReunion as $salle)
-     { ?>
-      <option value="<?= $salle['room_name'] ?>"><?= $salle['room_name'] ?></option>
-  <?php
-    } ?>
-</select> 
 <div class="text-center buttonEditWrapper">
-    <button id="btnEditReunion" class="btn btn-info btn-rounded btn-sm buttonEdit" data-toggle="modal" data-target="#modalEdit"
-      disabled>Edit<i class="fa fa-pencil-square-o ml-1"></i></a>
+    <button id="btnEditReunion" class="btn btn-info btn-rounded btn-sm buttonEdit" data-toggle="modal" data-target="#modalEdit2"
+      >Edit<i class="fa fa-pencil-square-o ml-1"></i></a>
   </div>
                   </div>
                 </div>
@@ -136,19 +118,10 @@
                   <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing minima veniam elit.</p>
                   <!-- Card footer -->
                   <div class="card-footer px-1">
-                  <select name="per1" id="select_reception" onclick="editReception()" >
-  <option  selected="selected" >Choose one</option>
-                  <?php
                   
-    foreach($sallesReception as $salle)
-     { ?>
-      <option value="<?= $salle['room_name'] ?>"><?= $salle['room_name'] ?></option>
-  <?php
-    } ?>
-</select> 
 <div class="text-center buttonEditWrapper">
-    <button id="btnEditReception" class="btn btn-info btn-rounded btn-sm buttonEdit" data-toggle="modal" data-target="#modalEdit"
-      disabled>Edit<i class="fa fa-pencil-square-o ml-1"></i></a>
+    <button id="btnEditReception" class="btn btn-info btn-rounded btn-sm buttonEdit" data-toggle="modal" data-target="#modalEdit3"
+      >Edit<i class="fa fa-pencil-square-o ml-1"></i></a>
   </div>
                   </div>
                 </div>
@@ -164,80 +137,9 @@
 </section>
 <!--     Section: Products v.2 -->
 
+<!-- PREMIER EDIT-->
 
-<div class="wrapper-modal-editor">
-
-<div class="block my-4">
-  <div class="d-flex justify-content-center">
-    <p class="h5 text-primary createShowP">0 row selected</p>
-  </div>
-</div>
-
-<div class="row d-flex justify-content-center modalWrapper">
-  <div class="modal fade addNewInputs" id="modalAdd" tabindex="-1" role="dialog" aria-labelledby="modalAdd"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header text-center">
-          <h4 class="modal-title w-100 font-weight-bold text-primary ml-5">Ajouter un nouvel Utilisateur </h4>
-          <button type="button" class="close text-primary" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body mx-3">
-
-          <div class="md-form mb-5">
-          <select class="mdb-select md-form" id="formPositionNew">
-            <option value="" disabled selected>Choose your option</option>
-            <option value="2">Admin</option>
-            <option value="1">User</option>
-            <option value="0">Null</option>
-          </select>
-          </div>
-
-          <div class="md-form mb-5">
-            <input type="text" id="inputName" class="form-control validate">
-            <label data-error="wrong" data-success="right" for="inputName">Nom</label>
-          </div>
-
-          
-          <div class="md-form mb-5">
-            <input type="text" id="inputPwdNewUser" class="form-control validate">
-            <label data-error="wrong" data-success="right" for="inputPwdNewUser">Mot de Passe</label>
-          </div>
-
-          <div class="md-form mb-5">
-            <input type="text" id="inputEmailNew" class="form-control validate" onkeyup="checkMail()">
-            <label data-error="wrong" data-success="right" for="inputEmailNew">Email</label>
-          </div>
-
-
-          <div class="md-form mb-5">
-            <input type="date" id="inputDate" class="form-control" placeholder="Select Date">
-            <label data-error="wrong" data-success="right" for="inputDate"></label>
-          </div>
-
-          <div class="md-form mb-5">
-            <input type="text" id="inputSalary" class="form-control validate">
-            <label data-error="wrong" data-success="right" for="inputSalary">Salary</label>
-          </div>
-
-        </div>
-        <div class="modal-footer d-flex justify-content-center buttonAddFormWrapper">
-          <button id="btnAdd" class="btn btn-outline-primary btn-block buttonAdd" data-dismiss="modal" onclick="createUser()">Add form
-            <i class="fa fa-paper-plane-o ml-1"></i>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="text-center">
-    <a href="" class="btn btn-info btn-rounded btn-sm" data-toggle="modal" data-target="#modalAdd">Add<i
-        class="fa fa-plus-square ml-1"></i></a>
-  </div>
-
-  <div class="modal fade modalEditClass" id="modalEdit" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal fade modalEditClass" id="modalEdit1" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header text-center">
@@ -247,19 +149,45 @@
           </button>
         </div>
         <div class="modal-body mx-3">
+          
+
           <div class="md-form mb-5">
-            <input type="text" id="formNameEdit" class="form-control validate">
-            <label data-error="wrong" id="test1" data-success="right" for="formNameEdit">Nom</label>
+        
+          <select class="mdb-select md-form" id="formTypenNew">
+          <?php
+          
+          foreach($sallesInfo as $salle)
+          { ?>
+           <option value="<?= $salle['room_name'] ?>"><?= $salle['room_name'] ?></option>
+       <?php
+         } ?>
+          </select>
+
           </div>
 
           <div class="md-form mb-5">
-          <select class="mdb-select md-form" id="formPositionEdit">
-            <option id="formPosEditDef" disabled selected></option>
-            <option value="2">Admin</option>
-            <option value="1">User</option>
-            <option value="0">NULL</option>
+        
+          <select class="mdb-select md-form" id="formTypenNew">
+          <?php
+          
+          foreach($type as $salle)
+          { ?>
+           <option value="<?= $salle['area_name'] ?>"><?= $salle['area_name'] ?></option>
+       <?php
+         } ?>
           </select>
-            <label data-error="wrong" data-success="right" for="formPositionEdit">Position</label>
+          </div>
+
+          
+
+          <div class="md-form mb-5">
+            <input type="text" id="formDescriptionEdit" class="form-control validate">
+            <label data-error="wrong" data-success="right" for="formAgeEdit">Description</label>
+          </div>
+          
+          <div class="md-form mb-5">
+            <input type="text" id="formCapacityEdit" class="form-control validate">
+            <label data-error="wrong" data-success="right" for="formSalaryEdit">Capacité</label>
           </div>
 
           <div class="md-form mb-5">
@@ -267,20 +195,76 @@
             <label data-error="wrong" data-success="right" for="formOfficeEdit">Email</label>
           </div>
 
+          
+
+          
+
+          
+
+
+        </div>
+        <div class="modal-footer d-flex justify-content-center editInsideWrapper">
+          <button id="btnValidEdit" class="btn btn-outline-secondary btn-block editInside" data-dismiss="modal">Edit
+            form
+            <i class="fa fa-paper-plane-o ml-1"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="public/js/sallesEditing.js"></script>
+  
+
+  
+<!-- DEUXIEME EDIT-->
+
+<div class="modal fade modalEditClass" id="modalEdit2" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header text-center">
+          <h4 class="modal-title w-100 font-weight-bold text-secondary ml-5">Edit form</h4>
+          <button type="button" class="close text-secondary" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body mx-3">
+          
+
           <div class="md-form mb-5">
-            <input type="text" id="formAgeEdit" class="form-control validate">
-            <label data-error="wrong" data-success="right" for="formAgeEdit">Age</label>
+        
+          <select class="mdb-select md-form" id="formTypenNew">
+          <?php
+          foreach($sallesReunion as $salle)
+          { ?>
+           <option value="<?= $salle['room_name'] ?>"><?= $salle['room_name'] ?></option>
+       <?php
+         } ?>
+          </select>
+          </div>
+
+          
+
+          <div class="md-form mb-5">
+            <input type="text" id="formDescriptionEdit" class="form-control validate">
+            <label data-error="wrong" data-success="right" for="formAgeEdit">Description</label>
+          </div>
+          
+          <div class="md-form mb-5">
+            <input type="text" id="formCapacityEdit" class="form-control validate">
+            <label data-error="wrong" data-success="right" for="formSalaryEdit">Capacité</label>
           </div>
 
           <div class="md-form mb-5">
-            <input type="text" id="formDateEdit" class="form-control datepicker">
-            <label data-error="wrong" data-success="right" for="formDateEdit">Date</label>
+            <input type="text" id="formEmailEdit" class="form-control validate" onkeyup="checkMail()">
+            <label data-error="wrong" data-success="right" for="formOfficeEdit">Email</label>
           </div>
 
-          <div class="md-form mb-5">
-            <input type="text" id="formSalaryEdit" class="form-control validate">
-            <label data-error="wrong" data-success="right" for="formSalaryEdit">Salary</label>
-          </div>
+          
+
+          
+
+          
 
 
         </div>
@@ -296,4 +280,67 @@
 
   <script type="text/javascript" src="public/js/sallesEditing.js"></script>
 
+
+<!-- DEUXIEME EDIT-->
+
+<div class="modal fade modalEditClass" id="modalEdit3" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header text-center">
+          <h4 class="modal-title w-100 font-weight-bold text-secondary ml-5">Edit form</h4>
+          <button type="button" class="close text-secondary" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body mx-3">
+          
+
+          <div class="md-form mb-5">
+        
+          <select class="mdb-select md-form" id="formTypenNew">
+          <?php
+         foreach($sallesReception as $salle)
+         { ?>
+          <option value="<?= $salle['room_name'] ?>"><?= $salle['room_name'] ?></option>
+      <?php
+        } ?>
+          </select>
+          </div>
+
+          
+
+          <div class="md-form mb-5">
+            <input type="text" id="formDescriptionEdit" class="form-control validate">
+            <label data-error="wrong" data-success="right" for="formAgeEdit">Description</label>
+          </div>
+          
+          <div class="md-form mb-5">
+            <input type="text" id="formCapacityEdit" class="form-control validate">
+            <label data-error="wrong" data-success="right" for="formSalaryEdit">Capacité</label>
+          </div>
+
+          <div class="md-form mb-5">
+            <input type="text" id="formEmailEdit" class="form-control validate" onkeyup="checkMail()">
+            <label data-error="wrong" data-success="right" for="formOfficeEdit">Email</label>
+          </div>
+
+          
+
+          
+
+          
+
+
+        </div>
+        <div class="modal-footer d-flex justify-content-center editInsideWrapper">
+          <button id="btnValidEdit" class="btn btn-outline-secondary btn-block editInside" data-dismiss="modal">Edit
+            form
+            <i class="fa fa-paper-plane-o ml-1"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="public/js/sallesEditing.js"></script>
   
