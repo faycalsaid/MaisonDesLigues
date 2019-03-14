@@ -29,12 +29,11 @@
             <input name="passwd" type="password" id="Form-pass1" class="form-control">
             <label for="Form-pass1">Votre Mot de passe</label>
           </div>
+
+          <div class="text-center mb-3">
+            <button type="submit" onclick="submitFormConnect()" class="btn blue-gradient btn-block btn-rounded z-depth-1a">Connexion</button>
+          </div>
         </form>
-
-
-        <div class="text-center mb-3">
-          <button type="button" onclick="submitFormConnect()" class="btn blue-gradient btn-block btn-rounded z-depth-1a">Connexion</button>
-        </div>
      
       </div>
 
